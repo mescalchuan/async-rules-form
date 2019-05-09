@@ -16,6 +16,9 @@
             label: String,
             prop: String,
             rules: Object
+        },
+        components: {
+            FormItem
         }
     }
 </script>
