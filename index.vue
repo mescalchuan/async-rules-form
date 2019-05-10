@@ -1,9 +1,29 @@
 <template>
     <div>
-        <FormItem :label="label" :rules="rules.rules1" v-if="rules.rules1.condition" :class="[rules.rules1.required ? '' : 'ivu-form-item-font']" :prop="prop">
+        <FormItem 
+            :label="label" 
+            :label-width="labelWidth"
+            :label-for="labelFor"
+            :show-message="showMessage"
+            :rules="rules.rules1" 
+            :prop="prop"
+            v-if="rules.rules1.condition" 
+            :class="[rules.rules1.required ? '' : 'ivu-form-item-font']" 
+           
+        >
             <slot name="form-element"></slot>
         </FormItem>
-        <FormItem :label="label" :rules="rules.rules2" v-if="rules.rules2.condition" :class="[rules.rules2.required ? '' : 'ivu-form-item-font']" :prop="prop">
+        <FormItem 
+            :label="label" 
+            :label-width="labelWidth"
+            :label-for="labelFor"
+            :show-message="showMessage"
+            :rules="rules.rules2" 
+            :prop="prop"
+            v-if="rules.rules2.condition" 
+            :class="[rules.rules2.required ? '' : 'ivu-form-item-font']" 
+            
+        >
             <slot name="form-element"></slot>
         </FormItem>
     </div>
@@ -14,6 +34,9 @@
     export default {
         props: {
             label: String,
+            labelWidth: Number,
+            labelFor: String,
+            showMessage: Boolean,
             prop: String,
             rules: Object
         },
